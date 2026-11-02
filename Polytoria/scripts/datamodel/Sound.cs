@@ -239,7 +239,7 @@ public sealed partial class Sound : Dynamic
 			if (_audioPlayer3D != null)
 			{
 				_audioPlayer3D.AttenuationModel = _attenuationMode;
-				_audioPlayer3D.AttenuationFilterCutoffHz = _attenuationMode == AudioStreamPlayer3D.AttenuationModelEnum.Disabled ? 20500 : 5000;
+				_audioPlayer3D.AttenuationFilterCutoffHz = 20500;
 			}
 
 			OnPropertyChanged();
@@ -328,7 +328,7 @@ public sealed partial class Sound : Dynamic
 			{
 				Stream = _currentStream,
 				AttenuationModel = _attenuationMode,
-				AttenuationFilterCutoffHz = _attenuationMode == AudioStreamPlayer3D.AttenuationModelEnum.Disabled ? 20500 : 5000
+				AttenuationFilterCutoffHz = 20500
 			};
 			GDNode.AddChild(_audioPlayer3D, @internal: Node.InternalMode.Back);
 			_audioPlayer3D.Finished += OnPlayerFinished;
